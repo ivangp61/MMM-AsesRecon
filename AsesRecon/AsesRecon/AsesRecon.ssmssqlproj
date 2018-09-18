@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AsesRecon">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="1pacific1-ma\ia3pacific6:MMMHC\igonzalezp">
+          <Created>2018-05-04T11:07:26.5608118-04:00</Created>
+          <Type>SQL</Type>
+          <Server>1pacific1-ma\ia3pacific6</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+        <ConnectionNode Name="1pacific2.dev.pr.mmmhc.com\pb_3pacific6:MMMHC\igonzalezp">
+          <Created>2018-06-22T09:51:58.3861709-04:00</Created>
+          <Type>SQL</Type>
+          <Server>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="1_RecentEligibilityRecord.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>1_RecentEligibilityRecord.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2_ReconMemberEnrollmentStatus.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>2_ReconMemberEnrollmentStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_ReconMemberPCP.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>3_ReconMemberPCP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="4_ReconArchiveFirstRun.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>4_ReconArchiveFirstRun.sql</FullPath>
+        </FileNode>
+        <FileNode Name="5_ReconDeleteNullMpi.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>5_ReconDeleteNullMpi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="6_ReconRecIdToDelete.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>6_ReconRecIdToDelete.sql</FullPath>
+        </FileNode>
+        <FileNode Name="7_ReconArchiveSecondRun.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>7_ReconArchiveSecondRun.sql</FullPath>
+        </FileNode>
+        <FileNode Name="8_ReconDeleteMemberRecords.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>8_ReconDeleteMemberRecords.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Archive.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Archive.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CreateTables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>CreateTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DIHmemberId.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DIHmemberId.sql</FullPath>
+        </FileNode>
+        <FileNode Name="EnrollmentSyncEnhances.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>EnrollmentSyncEnhances.sql</FullPath>
+        </FileNode>
+        <FileNode Name="mainTables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>mainTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Member.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Member.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MemberBenefitPackRecSource.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>MemberBenefitPackRecSource.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MemberEnrollmentStatus.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>MemberEnrollmentStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MemberPcpUpdate.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>MemberPcpUpdate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="programUpdates.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>programUpdates.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReconCleanup.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ReconCleanup.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReconCleanupAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ReconCleanupAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReconCleanupCreateDate.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ReconCleanupCreateDate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReconCleanupMemberBenefitPackage.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ReconCleanupMemberBenefitPackage.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReconCleanupMemberHealthCareAdmin.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ReconCleanupMemberHealthCareAdmin.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ShrinkDatabase.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ShrinkDatabase.sql</FullPath>
+        </FileNode>
+        <FileNode Name="signatureCriteria.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>signatureCriteria.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Statistics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Statistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TruncateTable.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>TruncateTable.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

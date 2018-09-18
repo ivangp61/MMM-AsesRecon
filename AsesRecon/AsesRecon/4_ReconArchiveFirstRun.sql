@@ -1,0 +1,24 @@
+USE ASES;
+
+Truncate Table [dbo].[MemberHealthCareAdminArchive];
+Truncate Table [dbo].[MemberHealthCareAdminCurrentArchive];
+Truncate Table [dbo].[MemberArchive];
+
+INSERT INTO [dbo].[MemberHealthCareAdminArchive]([MemberHealthCareAdminRecId],[MemberRecId],[SignatureDate],[CompletionDate],[EnrollDate],[DisenrollDate],[HasPartA],[HasPartB],[MemberId],[EnrollmentStatusMRefId],[EnrollmentStatusEffDate],[EnrollmentStatusEndDate],[BenefitPackageMRefId],[BenefitPackageEffDate],[BenefitPackageEndDate],[PCPAssign],[PCPEffectiveDate],[PCPEndDate],[CmsEffectiveDate],[CmsExpirationDate],[MA10EffectiveDate],[MA10ExpirationDate],[CreatedBySrc],[CreatedOnSrc],[LastUpdateBySrc],[LastUpdateOnSrc],[MemberSuffix],[MPI],[HicNumber],[OdsiNumber],[ContractNumber],[CurrEligibility],[Carrier],[CarrierEffectiveDate],[BenefitPackageType],[BenefitPackageTypeEffDate],[BenefitPackageVersion],[BenefitPackageVersionEffDate],[AsesRegion],[AsesCoverageCode],[AsesLastEligibilityProcessDate],[AsesEligibilityEffectiveDate],[AsesEligibilityExpirationDate],[AsesLastEligibilityUpdateDate],[AsesMedicaidEligible],[AsesLastQueryResponseProcessDate],[JobLoadDate])
+Select [MemberHealthCareAdminRecId],MHCA1.[MemberRecId],[SignatureDate],[CompletionDate],[EnrollDate],[DisenrollDate],[HasPartA],[HasPartB],[MemberId],[EnrollmentStatusMRefId],[EnrollmentStatusEffDate],[EnrollmentStatusEndDate],[BenefitPackageMRefId],[BenefitPackageEffDate],[BenefitPackageEndDate],[PCPAssign],[PCPEffectiveDate],[PCPEndDate],[CmsEffectiveDate],[CmsExpirationDate],[MA10EffectiveDate],[MA10ExpirationDate],[CreatedBySrc],[CreatedOnSrc],[LastUpdateBySrc],[LastUpdateOnSrc],[MemberSuffix],MHCA1.[MPI],[HicNumber],[OdsiNumber],[ContractNumber],[CurrEligibility],[Carrier],[CarrierEffectiveDate],[BenefitPackageType],[BenefitPackageTypeEffDate],[BenefitPackageVersion],[BenefitPackageVersionEffDate],[AsesRegion],[AsesCoverageCode],[AsesLastEligibilityProcessDate],[AsesEligibilityEffectiveDate],[AsesEligibilityExpirationDate],[AsesLastEligibilityUpdateDate],[AsesMedicaidEligible],[AsesLastQueryResponseProcessDate],[JobLoadDate]
+FROM dbo.MemberHealthCareAdmin MHCA1
+Where MPI IS NULL
+;
+
+INSERT INTO [dbo].[MemberHealthCareAdminCurrentArchive]([MemberHealthCareAdminCurrentRecId],[MemberRecId],[CarrierMRefId],[SignatureDate],[CompletionDate],[EnrollDate],[DisenrollDate],[HasPartA],[HasPartB],[MemberId],[EnrollmentStatusMRefId],[EnrollmentStatusEffDate],[EnrollmentStatusEndDate],[BenefitPackageMRefId],[BenefitPackageEffDate],[BenefitPackageEndDate],[BenefitPackageType],[BenefitPackageTypeEffDate],[BenefitPackageVersion],[BenefitPackageVersionEffDate],[PCPAssign],[PCPEffectiveDate],[PCPEndDate],[CmsEffectiveDate],[CmsExpirationDate],[MA10EffectiveDate],[MA10ExpirationDate],[CreatedBySrc],[CreatedOnSrc],[LastUpdateBySrc],[LastUpdateOnSrc],[Carrier],[CarrierEffectiveDate],[MemberSuffix],[MPI],[HicNumber],[OdsiNumber],[ContractNumber],[AsesRegion],[AsesCoverageCode],[CurrEligibility],[AsesMedicaidEligible],[AsesLastEligibilityProcessDate],[AsesEligibilityEffectiveDate],[AsesEligibilityExpirationDate],[AsesLastQueryResponseProcessDate],[EligibilityMemberRecId],[AsesLastEligibilityUpdateSource],[AsesLastEligibilityUpdateDate],[QueryResponseDetailRecId],[CreatedON],[LastUpdateON])
+Select [MemberHealthCareAdminCurrentRecId],MHCA1.[MemberRecId],[CarrierMRefId],[SignatureDate],[CompletionDate],[EnrollDate],[DisenrollDate],[HasPartA],[HasPartB],[MemberId],[EnrollmentStatusMRefId],[EnrollmentStatusEffDate],[EnrollmentStatusEndDate],[BenefitPackageMRefId],[BenefitPackageEffDate],[BenefitPackageEndDate],[BenefitPackageType],[BenefitPackageTypeEffDate],[BenefitPackageVersion],[BenefitPackageVersionEffDate],[PCPAssign],[PCPEffectiveDate],[PCPEndDate],[CmsEffectiveDate],[CmsExpirationDate],[MA10EffectiveDate],[MA10ExpirationDate],[CreatedBySrc],[CreatedOnSrc],[LastUpdateBySrc],[LastUpdateOnSrc],[Carrier],[CarrierEffectiveDate],[MemberSuffix],MHCA1.[MPI],[HicNumber],[OdsiNumber],[ContractNumber],[AsesRegion],[AsesCoverageCode],[CurrEligibility],[AsesMedicaidEligible],[AsesLastEligibilityProcessDate],[AsesEligibilityEffectiveDate],[AsesEligibilityExpirationDate],[AsesLastQueryResponseProcessDate],[EligibilityMemberRecId],[AsesLastEligibilityUpdateSource],[AsesLastEligibilityUpdateDate],[QueryResponseDetailRecId],[CreatedON],[LastUpdateON]
+FROM dbo.MemberHealthCareAdminCurrent MHCA1
+Where MHCA1.mpi is null
+;
+
+
+INSERT INTO [dbo].[MemberArchive]([MemberRecId],[CarrierMRefId],[FirstName],[MiddleInitial],[LastName],[SecLastName],[GenderMRefId],[BirthDate],[DeathDate],[SocialSecurity],[SORId],[CreatedBySrc],[CreatedOnSrc],[LastUpdateBySrc],[LastUpdateOnSrc],[JobLoadDate],[MPI])
+Select [MemberRecId],[CarrierMRefId],[FirstName],[MiddleInitial],[LastName],[SecLastName],[GenderMRefId],[BirthDate],[DeathDate],[SocialSecurity],[SORId],[CreatedBySrc],[CreatedOnSrc],[LastUpdateBySrc],[LastUpdateOnSrc],[JobLoadDate],[MPI]
+From [dbo].[Member] M
+Where M.mpi is null
+;

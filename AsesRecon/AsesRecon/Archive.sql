@@ -1,0 +1,9 @@
+--===================ARCHIVE==============================
+--Crear tablas de backup a las tablas a limpiar. Misma estructura de las tablas actuales, pero con el archive alfrente.
+--Estas tablas deben conservar el estatus de los records antes del proceso de limpieza.
+--dbo.MemberArchive
+--dbo.MemberHealthCareAdminArchive
+--dbo.MemberBenefitPackageArchive
+--dbo.dbo.MemberPCPArchive
+--dboMemberEnrollmentStatusArchive
+--===================ARCHIVE==============================

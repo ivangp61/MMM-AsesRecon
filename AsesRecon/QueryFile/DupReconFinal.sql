@@ -1,66 +1,6 @@
 --================================================
 --1. Actualizar MPI para la tabla de productos.
 
-Select M.SORId, Count(Distinct M.MemberRecId) As recIdCount
-From dbo.Member M
-Where 1 = 1
-	and M.mpi  Not In (
-						Select Distinct mpi
-						From(
-						Select M.MPI, M.SORId, Count(Distinct M.MemberRecId) As recIdCount
-						From dbo.Member M
-							Left Join dbo.MPIMembership MM
-							On M.MPI = MM.MPI
-						Where 1 = 1
-							--and MM.MPI is null
-							--and sorid = 'N00374498295'
-							--and M.MPI = '0080032292859'
-						Group By M.MPI, M.SORId
-						Having Count(Distinct M.MemberRecId) > 1
-						) D
-					  )
-	--and sorid = 'N00374498295'
-Group By M.SORId
-Having Count(Distinct M.MemberRecId) > 1
-;
-
-Select Distinct M.MPI--, M.MemberRecId, M.CarrierMRefId, MBP.MPI--, MBP.EffectiveDate, MBP.TerminationDate
-From (
-		Select M.MPI, M.SORId, Count(Distinct M.MemberRecId) As recIdCount
-		From dbo.Member M
-			Left Join dbo.MPIMembership MM
-			On M.MPI = MM.MPI
-		Where 1 = 1
-			--and MM.MPI is null
-			--and sorid = 'N00374498295'
-			and M.MPI = '0080032292859'
-		Group By M.MPI, M.SORId
-		Having Count(Distinct M.MemberRecId) > 1
-		) AS D
-Inner Join dbo.Member M
-On M.MPI = D.MPI
-Inner Join dbo.MemberBenefitPackage MBP
-On M.MemberRecId = MBP.MemberRecId
-Where 1 = 1
-	and MBP.MPI is null
-;
-
-Select M.MPI, Count(Distinct M.MemberRecId) As recIdCount
-From dbo.Member M
-Where 1 = 1
-	--and MM.MPI is null
-	--and sorid = 'N00374498295'
-	and M.MPI = '0080032292859'
-Group By M.MPI
-Having Count(Distinct M.MemberRecId) > 1
-;
-
-Select M.MPI, Count(Distinct M.MemberRecId) As recIdCount
-From dbo.Member M
-Where 1 = 1
-Group By M.MPI
-Having Count(Distinct M.MemberRecId) > 1
-
 
 --Update dbo.MemberBenefitPackage
 Set mpi = M.MPI
@@ -85,6 +25,10 @@ Where 1 = 1
 --================================================
 
 
+
+--================================================
+--2. Buscar afiliados con vigencia que no sea cancelada
+
 --Drop Table dbo.MemberConsNoMPMpi;
 
 Create Table dbo.MemberConsNoMPMpi
@@ -96,19 +40,9 @@ Create Table dbo.MemberConsNoMPMpi
 )
 ;
 
---Create Table dbo.MemberConsNoMpMPIElig(
---	memberRecId uniqueIdentifier,
---	mpi nvarchar(13),
---	maxEligibilityDate dateTime
---)
---;
-
-
-
---================================================
---2. Buscar afiliados con vigencia que no sea cancelada
 
 --Truncate Table dbo.MemberConsNoMPMpi;
+
 --Insert into dbo.MemberConsNoMPMpi(mpi, memberRecId, carrierMrefId)
 Select Distinct Mbp.MPI, M.MemberRecId, M.CarrierMRefId--, MBP.EffectiveDate, MBP.TerminationDate
 From (
@@ -118,7 +52,6 @@ From (
 			On M.MPI = MM.MPI
 		Where 1 = 1
 			and MM.MPI is null
-			--and sorid = 'N00374498295'
 		Group By M.MPI
 		Having Count(Distinct M.MemberRecId) > 1
 		) AS D
@@ -128,7 +61,6 @@ Inner Join dbo.MemberBenefitPackage MBP
 On M.mpi = MBP.mpi
 Where 1 = 1
 	and M.mpi Not In(Select Distinct MCNMM.mpi From dbo.MemberConsNoMPMpi MCNMM)
-	--and MBP.EffectiveDate <> IsNull(MBP.TerminationDate, MBP.EffectiveDate + 1)--249
 ;
 
 --Delete [dbo].[MemberBenefitPackageMax]
@@ -166,72 +98,7 @@ Group By MCNMM.mpi
 
 --================================================
 
-Select Distinct M.MPI, MBP.EffectiveDate, MBP.TerminationDate
-From [dbo].[MemberBenefitPackageMax] M
-	Inner Join dbo.MemberBenefitPackage MBP
-	On M.mpi = MBP.mpi and M.LastUpdateOnSrc = IsNull(MBP.LastUpdateOnSrc, MBP.CreatedOnSrc)
-	Inner Join dbo.MemberConsNoMPMpi MCNMMP
-	On M.mpi = MCNMMP.mpi
-Order By M.MPI
-;
 
-
-Select Distinct M.MPI, Count(Distinct MBP.EffectiveDate)
-From [dbo].[MemberBenefitPackageMax] M
-	Inner Join dbo.MemberBenefitPackage MBP
-	On M.mpi = MBP.mpi and M.LastUpdateOnSrc = IsNull(MBP.LastUpdateOnSrc, MBP.CreatedOnSrc)
-	Inner Join dbo.MemberConsNoMPMpi MCNMMP
-	On M.mpi = MCNMMP.mpi
-Group By M.MPI
-Having Count(Distinct MBP.EffectiveDate) > 1
-Order By M.MPI--155
-;
-
-Select Distinct MBP.MemberBenefitPackageRecId,
-				MBP.MemberRecId,
-				MBP.BenefitPackageMRefId, 
-				MBP.EffectiveDate, 
-				MBP.TerminationDate,
-				MBP.SORId,
-				MBP.CreatedBySrc,
-				MBP.CreatedOnSrc,
-				MBP.LastUpdateBySrc,
-				MBP.LastUpdateOnSrc,
-				MBP.JobLoadDate,
-				MCNMM.mpi,
-				MBP.PackageId,
-				MBP.OrgId,
-				MBP.Pbp
-				--,				ME.CarrierMRefId
-From [dbo].[MemberBenefitPackageMax] M
-	Inner Join dbo.MemberConsNoMPMpi MCNMM
-	On M.MPI = MCNMM.MPI
-	Inner Join dbo.MemberBenefitPackage MBP
-	On M.mpi = MBP.mpi and M.LastUpdateOnSrc = IsNull(MBP.LastUpdateOnSrc, MBP.CreatedOnSrc)
-	Inner Join dbo.Member ME
-	On MBP.MemberRecId = ME.MemberRecId
-	Left Join
-	(
-		Select Distinct M.MPI, Count(Distinct MBP.EffectiveDate) effDate
-		From [dbo].[MemberBenefitPackageMax] M
-			Inner Join dbo.MemberBenefitPackage MBP
-			On M.mpi = MBP.mpi and M.LastUpdateOnSrc = IsNull(MBP.LastUpdateOnSrc, MBP.CreatedOnSrc)
-			Inner Join dbo.MemberConsNoMPMpi MCNMMP
-			On M.mpi = MCNMMP.mpi
-		Group By M.MPI
-		Having Count(Distinct MBP.EffectiveDate) > 1
-	) as D
-	On M.mpi = D.mpi
-Where 1 = 1
-	and D.mpi is null
-	and MBP.EffectiveDate <> IsNull(MBP.TerminationDate, MBP.EffectiveDate + 1)--249
-;--383
-
-Select MBP.*
-From dbo.MemberBenefitPackage MBP
-	Inner Join dbo.MemberConsNoMPMpi MCNMM
-	On MBP.MPI = MCNMM.MPI
-;
 
 --=============================GOLD_QUERY===========================
 --INSERT INTO dbo.MemberBenefitPackageConsolidation
@@ -291,7 +158,7 @@ Where 1 = 1
 ;--383
 --=============================GOLD_QUERY===========================
 
---=============================Max_Duplicates===========================
+Begin--=============================Max_Duplicates===========================
 --=====Delete_Max_Duplicates================
 --Delete [dbo].[MemberBenefitPackageMax]
 Where mpi In (
@@ -365,7 +232,6 @@ Select Distinct MBP.MemberBenefitPackageRecId,
 				MBP.PackageId,
 				MBP.OrgId,
 				MBP.Pbp
-				--,				ME.CarrierMRefId
 From [dbo].[MemberBenefitPackageMax] M
 	Inner Join dbo.MemberConsNoMPMpi MCNMM
 	On M.MPI = MCNMM.MPI
@@ -393,89 +259,179 @@ Where 1 = 1
 ;--
 
 
---1. Crear recon de los max dups.
+End--=============================Max_Duplicates===========================
 
---=============================Max_Duplicates===========================
-
-Select Distinct MBPC.*
-From dbo.MemberBenefitPackageConsolidation MBPC
-	Inner Join dbo.MemberConsNoMPMpi MCNMM
-	On MBPC.MPI = MCNMM.mpi
-Where 1 = 1
-	--and MBPC.mpi = '0080000010426'
-;
-
-
-
-Select Distinct MCNMM.mpi
+Begin--=============================UpdateConsMemberRecId===========================
+--Update dbo.MemberConsNoMPMpi
+SET memberRecIdCons = MBPC.MemberRecId
 From dbo.MemberConsNoMPMpi MCNMM
+	Inner Join dbo.MemberBenefitPackageConsolidation MBPC
+	On MCNMM.mpi = MBPC.MPI
+;
+End--=============================UpdateConsMemberRecId===========================
 
-Except
+Begin--=============================UpdateMemberBenefitPackage===========================
 
-Select Distinct MBPC.mpi
-From dbo.MemberBenefitPackageConsolidation MBPC
-	Inner Join dbo.MemberConsNoMPMpi MCNMM
-	On MBPC.MPI = MCNMM.mpi
+--UPDATE dbo.MemberBenefitPackage
+SET MemberRecId = MCNMM.MemberRecIdCons
+FROM dbo.MemberBenefitPackage MBP
+	INNER JOIN dbo.MemberConsNoMPMpi MCNMM
+	ON MBP.MemberRecId = MCNMM.MemberRecId
+;--1,191
+
+Select MBP.MemberRecId, MCNMM.MemberRecIdCons
+From dbo.MemberBenefitPackage MBP
+	INNER JOIN dbo.MemberConsNoMPMpi MCNMM
+	ON MBP.MemberRecId = MCNMM.MemberRecId
 Where 1 = 1
+	and MCNMM.mpi = '0080033062951'
+;--1,191
+
+Select BP.CompanyContract,MBP.*
+From dbo.MemberBenefitPackage MBP
+	INNER JOIN .MemberConsNoMPMpi MCNMM
+	ON MBP.MemberRecId = MCNMM.MemberRecId
+	Inner Join MRef.BenefitPackage BP
+	On MBP.BenefitPackageMRefId = BP.BenefitPackageMRefId
+Where 1 = 1
+	and MCNMM.mpi = '0080033062951'
+	and BP.CompanyContract = 'H4004'
+Order By MBP.EffectiveDate DESC
 ;
 
 Select *
 From dbo.Member M
-Where 1 = 1
-	--and MemberRecId = 'D65762F9-3F81-41B6-9C7E-4A2DC4D4D375'
-	--and M.mpi = '0080006613835' --'0080006613828'--
+Where M.MPI = '0080033062951'
 ;
+
+Select MBP.mpi, Count(Distinct MBP.MemberRecId)
+From dbo.MemberBenefitPackage MBP
+	INNER JOIN .MemberConsNoMPMpi MCNMM
+	ON MBP.MemberRecId = MCNMM.MemberRecId
+Where 1 = 1
+Group By MBP.mpi
+Having Count(Distinct MBP.MemberRecId) > 1
+	--and MCNMM.mpi = '0008000032375'
+;
+
+
+End--=============================UpdateMemberBenefitPackage===========================
+
+
+Begin--=============================UpdateMemberEnrollmentStatus===========================
+
+--2. Actualizar MPI para la tabla de enrollment status.
+
+--Update dbo.MemberEnrollmentStatus
+Set mpi = MCNMM.mpi
+From dbo.MemberEnrollmentStatus MES
+	Inner Join dbo.MemberConsNoMPMpi MCNMM	
+	On MCNMM.memberRecId = MES.memberRecId
+;
+
+--Update dbo.MemberEnrollmentStatus
+Set memberRecId = MCNMM.MemberRecIdCons
+From dbo.MemberEnrollmentStatus MES
+	Inner Join dbo.MemberConsNoMPMpi MCNMM	
+	On MCNMM.memberRecId = MES.memberRecId
+;
+
+SELECT MES.SORId, MES.CreatedOnSrc, COUNT(DISTINCT MES.MemberEnrollmentStatusRecId) AS MemberEnrollmentStatusRecId
+FROM dbo.MemberEnrollmentStatus MES
+	INNER JOIN dbo.MemberConsNoMPMpi MCNMM
+	ON MES.MemberRecId = MCNMM.MemberRecId
+Group By MES.SORId, MES.CreatedOnSrc
+Having COUNT(DISTINCT MES.MemberEnrollmentStatusRecId) > 1
+
+--DELETE dbo.MemberEnrollmentStatus
+FROM dbo.MemberEnrollmentStatus MES1
+	INNER JOIN (
+					SELECT MES.SORId, MES.CreatedOnSrc, COUNT(DISTINCT MES.MemberEnrollmentStatusRecId) AS MemberEnrollmentStatusRecId
+					FROM dbo.MemberEnrollmentStatus MES
+						INNER JOIN dbo.MemberRecIdCon MRIC
+						ON MES.MemberRecId = MRIC.MemberRecId
+					Group By MES.SORId, MES.CreatedOnSrc
+					Having COUNT(DISTINCT MES.MemberEnrollmentStatusRecId) > 1
+			   ) AS DUP
+	ON MES1.SORId = DUP.SORId AND MES1.CreatedOnSrc = DUP.CreatedOnSrc
+WHERE MES1.OrgId IS NULL
+;
+
+
+Select
+
 
 Select *
-From dbo.MemberBenefitPackage MBP
-Where 1 = 1
-	--and MemberRecId = 'D65762F9-3F81-41B6-9C7E-4A2DC4D4D375'
-	and mpi = '0080006613828'--'0080006613835' --
+From dbo.MemberConsNoMPMpi MCNMM
+Where mpi = '0080026876781'
 ;
---============================ValidacionMpiVsRecId=============================
 
-Select Distinct Mbp.MPI, M.MemberRecId, M.CarrierMRefId--, MBP.EffectiveDate, MBP.TerminationDate
-From (
-		Select M.MPI, M.SORId, Count(Distinct M.MemberRecId) As recIdCount
-		From dbo.Member M
-			Left Join dbo.MPIMembership MM
-			On M.MPI = MM.MPI
-		Where 1 = 1
-			and MM.MPI is null
-			--and sorid = 'N00374498295'
-		Group By M.MPI, M.SORId
-		Having Count(Distinct M.MemberRecId) > 1
-		) AS D
-Inner Join dbo.Member M
-On M.MPI = D.MPI
-Inner Join dbo.MemberBenefitPackage MBP
-On M.mpi = MBP.mpi
-Where 1 = 1
-	and MBP.EffectiveDate <> IsNull(MBP.TerminationDate, MBP.EffectiveDate + 1)--249
+Select Top 100 MES.*
+From dbo.MemberEnrollmentStatus MES
+Where SORId = 'S00082739062'
 
-Except
-
-Select Distinct Mbp.MPI--, M.MemberRecId, M.CarrierMRefId,mbp.MPI--, MBP.EffectiveDate, MBP.TerminationDate
-From (
-		Select M.MPI, M.SORId, Count(Distinct M.MemberRecId) As recIdCount
-		From dbo.Member M
-			Left Join dbo.MPIMembership MM
-			On M.MPI = MM.MPI
-		Where 1 = 1
-			and MM.MPI is null
-			--and sorid = 'N00374498295'
-		Group By M.MPI, M.SORId
-		Having Count(Distinct M.MemberRecId) > 1
-		) AS D
-Inner Join dbo.Member M
-On M.MPI = D.MPI
-Inner Join dbo.MemberBenefitPackage MBP
-On M.MemberRecId = MBP.MemberRecId
-Where 1 = 1
-	and MBP.EffectiveDate <> IsNull(MBP.TerminationDate, MBP.EffectiveDate + 1)--249
+Select Distinct MES.*--, MBP.OrgId
+From dbo.MemberEnrollmentStatus MES
+	Inner Join dbo.MemberConsNoMPMpi MCNMM
+	On MCNMM.mpi = MES.MPI
+	Inner Join dbo.MemberBenefitPackage MBP
+	On MES.MPI = MBP.MPI
+		and MES.EffectiveDate Between MBP.EffectiveDate and Isnull(MBP.EffectiveDate, MBP.EffectiveDate + 1)
 ;
---============================ValidacionMpiVsRecId=============================
+
+Select Distinct MES.*--, MBP.OrgId
+From dbo.MemberConsNoMPMpi MCNMM
+	On MCNMM.mpi = MES.MPI
+	Inner Join dbo.MemberBenefitPackage MBP
+	On MES.MPI = MBP.MPI
+		and MES.EffectiveDate Between MBP.EffectiveDate and Isnull(MBP.EffectiveDate, MBP.EffectiveDate + 1)
+;
+
+Select MES.*, BP.CompanyContract
+From dbo.MemberBenefitPackage MES
+	Inner Join dbo.MemberConsNoMPMpi MCNMM	
+	On MCNMM.memberRecId = MES.memberRecId
+	Inner Join mref.BenefitPackage BP
+	On MES.BenefitPackageMRefId = BP.BenefitPackageMRefId
+;--1191
+
+
+End--=============================UpdateMemberEnrollmentStatus===========================
+
+Select Distinct --MCNMM.*
+				--MBPC.*	
+				MBPC.MemberRecId
+From dbo.MemberConsNoMPMpi MCNMM
+	Inner Join dbo.MemberBenefitPackageConsolidation MBPC
+	On MCNMM.mpi = MBPC.MPI
+;
+
+
+Select Distinct MCNMM.*,
+				MBPC.memberRecId				
+From dbo.MemberConsNoMPMpi MCNMM
+	Inner Join dbo.MemberBenefitPackageConsolidation MBPC
+	On MCNMM.mpi = MBPC.MPI
+Order By MCNMM.mpi
+;
+
+
+Select Distinct *
+From dbo.MemberConsNoMPMpi
+;
 
 
 
+--Multiple contracts
+--0080002366737
+--0080003205547
+--0080003209267
+--0080004443947
+--0080006193533
 
+--Normal
+--0008000032375: Los estatus de enrollment pueden estar duplicados por la compañia.
+--0013042901427
+--0080000010426
+--0080000032748
+--000000112350

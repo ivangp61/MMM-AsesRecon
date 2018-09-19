@@ -2,7 +2,8 @@ Begin--==================SYNC_TABLES========================
 SELECT TOP 100 *
 FROM dbo.Member 
 WHERE 1 = 1
-	and mpi is not null
+	--and mpi is not null
+	and mpi = '0008000032375'
 	--and CONVERT(varchar,JobLoadDate, 23) = '2018-07-03' 
 	--and SocialSecurity = '582669532'
 ORDER BY CreatedOnSrc DESC
@@ -12,6 +13,7 @@ SELECT *
 FROM dbo.MemberHealthCareAdmin
 WHERE 1 = 1
 	and mpi is not null
+	and mpi = '0008000032375'
 	--and CONVERT(varchar,JobLoadDate, 23) >= '2018-07-02' 
 ;
 
@@ -19,6 +21,7 @@ SELECT Top 100 *
 FROM dbo.MemberBenefitPackage
 WHERE 1 = 1
 	and mpi is not null
+	and mpi = '0008000032375'
 	--and CONVERT(varchar,JobLoadDate, 23) >= '2018-07-02' 
 ;
 

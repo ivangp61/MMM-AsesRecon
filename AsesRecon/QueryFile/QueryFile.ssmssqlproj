@@ -235,6 +235,12 @@
           <AssociatedConnUserName />
           <FullPath>QueryUserDefinedQueueAnalysis.sql</FullPath>
         </FileNode>
+        <FileNode Name="ReconEnrollmentStatus539.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ReconEnrollmentStatus539.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery2.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>

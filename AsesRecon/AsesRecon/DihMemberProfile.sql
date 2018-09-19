@@ -7,7 +7,7 @@ DECLARE
 SELECT @memberrecid = MemberRecId
   FROM XRef.Member
   WHERE 1 = 1
-    AND ExternalValue = '010817748';
+    AND ExternalValue = '030035752';
 
  --SELECT @memberrecid = 10188;
 

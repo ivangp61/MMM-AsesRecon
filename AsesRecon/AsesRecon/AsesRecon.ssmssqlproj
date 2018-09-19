@@ -27,6 +27,18 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
+        <ConnectionNode Name="5PACIFIC1\IA3PACIFIC6:MMMHC\igonzalezp">
+          <Created>2018-09-10T10:56:05.1946517-04:00</Created>
+          <Type>SQL</Type>
+          <Server>5PACIFIC1\IA3PACIFIC6</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
@@ -92,10 +104,16 @@
           <FullPath>CreateTables.sql</FullPath>
         </FileNode>
         <FileNode Name="DIHmemberId.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>DIHmemberId.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DihMemberProfile.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DihMemberProfile.sql</FullPath>
         </FileNode>
         <FileNode Name="EnrollmentSyncEnhances.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
@@ -104,14 +122,14 @@
           <FullPath>EnrollmentSyncEnhances.sql</FullPath>
         </FileNode>
         <FileNode Name="mainTables.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>mainTables.sql</FullPath>
         </FileNode>
         <FileNode Name="Member.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Member.sql</FullPath>
         </FileNode>
@@ -146,8 +164,8 @@
           <FullPath>ReconCleanup.sql</FullPath>
         </FileNode>
         <FileNode Name="ReconCleanupAnalysis.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>ReconCleanupAnalysis.sql</FullPath>
         </FileNode>
@@ -158,8 +176,8 @@
           <FullPath>ReconCleanupCreateDate.sql</FullPath>
         </FileNode>
         <FileNode Name="ReconCleanupMemberBenefitPackage.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>ReconCleanupMemberBenefitPackage.sql</FullPath>
         </FileNode>
@@ -181,11 +199,47 @@
           <AssociatedConnUserName />
           <FullPath>signatureCriteria.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery3.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery6.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery6.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery7.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery8.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery8.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery9.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery9.sql</FullPath>
         </FileNode>
         <FileNode Name="Statistics.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>

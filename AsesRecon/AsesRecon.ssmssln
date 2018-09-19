@@ -3,12 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # SQL Server Management Studio Solution File, Format Version 12.00
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "AsesRecon", "AsesRecon\AsesRecon.ssmssqlproj", "{05915E49-3D3C-4557-A587-851ABEB3DC64}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "QueryFile", "QueryFile\QueryFile.ssmssqlproj", "{BF7B3D86-5CCB-45FA-966A-65774FAE0310}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "QueryResponse", "QueryResponse\QueryResponse.ssmssqlproj", "{535693FC-2A5A-4E23-B9BD-B98B66E50276}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{05915E49-3D3C-4557-A587-851ABEB3DC64}.Default|Default.ActiveCfg = Default
+		{C7966F29-D8DD-444B-937D-C5D439A18030}.Default|Default.ActiveCfg = Default
+		{BF7B3D86-5CCB-45FA-966A-65774FAE0310}.Default|Default.ActiveCfg = Default
+		{535693FC-2A5A-4E23-B9BD-B98B66E50276}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

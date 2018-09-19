@@ -1,9 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?>
-<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SqlWorkbenchSqlProject">
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="QueryFile">
   <Items>
-    <LogicalFolder Name="Connections" Type="2" />
-    <LogicalFolder Name="Queries" Type="0" />
-    <LogicalFolder Name="Miscellaneous" Type="3" />
-
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="1pacific1-ma\ia3pacific6:MMMHC\igonzalezp">
+          <Created>2018-08-08T14:03:22.2124712-04:00</Created>
+          <Type>SQL</Type>
+          <Server>1pacific1-ma\ia3pacific6</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+        <ConnectionNode Name="1pacific2.dev.pr.mmmhc.com\pb_3pacific6:MMMHC\igonzalezp">
+          <Created>2018-08-08T14:03:29.8224712-04:00</Created>
+          <Type>SQL</Type>
+          <Server>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+        <ConnectionNode Name="5PACIFIC1\IA3PACIFIC6:MMMHC\igonzalezp">
+          <Created>2018-09-10T11:45:37.0156583-04:00</Created>
+          <Type>SQL</Type>
+          <Server>5PACIFIC1\IA3PACIFIC6</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="0.1_QueryDetailTables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>0.1_QueryDetailTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="0.2_BackupQueryDetailTables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>0.2_BackupQueryDetailTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="1_UpdateQueryDetailMpi.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>1_UpdateQueryDetailMpi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10_EnrollmentDetailRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>10_EnrollmentDetailRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11_BillingDetailRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>11_BillingDetailRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12_MemberHealthCareAdminRetroBillingRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>12_MemberHealthCareAdminRetroBillingRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2_QueryDetailRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>2_QueryDetailRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_QueryResponseDetailRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>3_QueryResponseDetailRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="4_UpdateQueryResponseDetailMpi.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>4_UpdateQueryResponseDetailMpi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="5_QueryDetailFailPreProcessRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>5_QueryDetailFailPreProcessRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="6_UpdateQueryDetailFailPreProcessMpi.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>6_UpdateQueryDetailFailPreProcessMpi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="7_UpdateQueryUserDefinedQueueMpi.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>7_UpdateQueryUserDefinedQueueMpi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="8_UpdateEnrollmentDetailFailPreProcessMpi.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>8_UpdateEnrollmentDetailFailPreProcessMpi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="9_EnrollmentDetailFailPreProcessRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>9_EnrollmentDetailFailPreProcessRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DupRecon.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DupRecon.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DupRecon2.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DupRecon2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DupRecon3.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DupRecon3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DupReconFinal.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:5PACIFIC1\IA3PACIFIC6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>5PACIFIC1\IA3PACIFIC6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DupReconFinal.sql</FullPath>
+        </FileNode>
+        <FileNode Name="P_1_sqlExtrSignature.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>P_1_sqlExtrSignature.sql</FullPath>
+        </FileNode>
+        <FileNode Name="P_2_sqlExtrProgram.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>P_2_sqlExtrProgram.sql</FullPath>
+        </FileNode>
+        <FileNode Name="P_3_sqlExtrAsesExpiration.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>P_3_sqlExtrAsesExpiration.sql</FullPath>
+        </FileNode>
+        <FileNode Name="P_4_sqlExtrReQuery.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>P_4_sqlExtrReQuery.sql</FullPath>
+        </FileNode>
+        <FileNode Name="P_5_sqlExtrQuerySend.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>P_5_sqlExtrQuerySend.sql</FullPath>
+        </FileNode>
+        <FileNode Name="P_6_updFailedPreProcess.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>P_6_updFailedPreProcess.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryDetailFailPreProcessAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryDetailFailPreProcessAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryDetailReconAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryDetailReconAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryFileAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryFileAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryFileReport.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryFileReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryFileReportAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryFileReportAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryResponseDetailAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryResponseDetailAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryResponseDetailReconAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryResponseDetailReconAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryUserDefinedQueueAnalysis.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryUserDefinedQueueAnalysis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific1-ma\ia3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific1-ma\ia3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:1pacific2.dev.pr.mmmhc.com\pb_3pacific6:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>1pacific2.dev.pr.mmmhc.com\pb_3pacific6</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery3.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
   </Items>
 </SqlWorkbenchSqlProject>
